@@ -33,7 +33,7 @@ static int nice_flor_s_decode(r_device *decoder, bitbuffer_t *bitbuffer)
     if (bitbuffer->num_rows != 2 || bitbuffer->bits_per_row[1] != 0) {
         return DECODE_ABORT_EARLY;
     }
-    if (bitbuffer->bits_per_row[0] != 52) {
+    if (bitbuffer->bits_per_row[0] != 52 && bitbuffer->bits_per_row[0] != 72) {
         return DECODE_ABORT_LENGTH;
     }
     bitbuffer_invert(bitbuffer);
